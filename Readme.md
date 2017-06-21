@@ -1,4 +1,4 @@
-# Microservice Code Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
+﻿# Microservice Code Template [![Build Status](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap.svg?branch=master)](https://travis-ci.org/PageUpPeopleOrg/microservice-bootstrap)
 
 A git repo that gives you a headstart on your own Microservice in [Dotnet Core](https://www.microsoft.com/net/core).
 
@@ -18,11 +18,11 @@ This will help you have a head start with,
 ## Get Started
 
 1. Clone the repo
-2. Ensure you have Docker toolbox installed. Good news, you don't even need asp.net vNext installed.
+2. Ensure you have Docker installed [download here](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 3. Setup environment variables (see below).
 4. Set unique Kinesis stream name and worker id (see below).
-5. Run `docker-compose up -d` from root folder of repo.
-6. Yay all up and running, Done!
+5. Run `docker-compose up -d` from root folder of repo (or without `-d` to not run in daemon mode so you can see the console output from the web server)
+6. Yay all up and running, Done! You can validate this by hitting [http://localhost:4001/healthcheck](http://localhost:4001/healthcheck) and ensuring you get 200 as the response code.
 
 ### Kinesis 
 
@@ -62,7 +62,7 @@ To get this running on your PC follow the instructions [here](https://code.pageu
 6. Run the CommentsAPI project in debug
 
 ### What if I just want worker service?
-* Remove WebService & WebServer.UnitTests projects from Visual Studio and delete the folder
+* Remove WebService & WebService.UnitTests projects from Visual Studio and delete the folder
 * Remove its references from docker compose file
 * Remove sections of travis yml referring to web service
 
